@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* collapsable tree*/
+.tree ul {
+    @apply pl-4;
+    list-style-type: none;
+    /*padding-left: 1rem;*/
+}
+
+.tree li {
+    @apply relative;
+}
+
+.tree li span:hover {
+    @apply bg-gray-200 dark:bg-gray-900 text-gray-800 dark:text-gray-50;
+}
+
+
+.request-dropdown {
+    @apply hidden text-gray-700;
+}
+
+.request-dropdown.active {
+    @apply block text-gray-800 dark:text-gray-50;
+}
+
+
+.tree .toggle-button {
+    @apply cursor-pointer flex justify-between items-center rounded-md;
+}
+.tree .toggle-button:hover {
+}
+
+.tree .nested {
+    @apply hidden pl-4;
+}
+
+.tree .active.nested {
+    @apply block;
+}
+
+/* edit single dropdown menu*/
+#request-dropdown[data-parent-type='api'] li[data-menu-name="new-request"],
+#request-dropdown[data-parent-type='api'] li[data-menu-name="new-folder"] {
+    @apply hidden;
+}
+
+
+
+/* hover translation*/
+.hover-translate {
+    @apply shadow shadow-gray-500 hover:shadow-lg hover:shadow-gray-600 hover:-translate-x-1
+    hover:-translate-y-1 transition ease-in-out duration-200;
+}
+
+/* max and min */
+.screen-toggle > :nth-child(1) {
+    @apply block
+}
+.screen-toggle > :nth-child(2) {
+    @apply hidden
+}
+.screen-toggle.active > :nth-child(1) {
+    @apply hidden
+}
+.screen-toggle.active > :nth-child(2) {
+    @apply block
+}
+

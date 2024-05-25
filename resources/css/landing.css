@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes fadeIn {
+    from {
+        scale: 0.5;
+    }
+    to {
+        scale: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes slideToRight {
+    from {
+        transform: translateX(-20%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.animate-slide-to-right {
+    animation: slideToRight 1s ease-in-out;
+}
+
+@keyframes slideToLeft {
+    from {
+        transform: translateX(20%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.animate-slide-to-left {
+    animation: slideToLeft 1s ease-in-out;
+}
+
+@keyframes slideToBottom {
+    from {
+        transform: translateY(-20%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.animate-slide-to-bottom {
+    animation: slideToBottom 1s ease-in-out;
+}
+/*div[data-fade="animate-slide-to-bottom"] {*/
+/*    transform: translateY(-20%);*/
+/*}*/
+
+
+
+
+
+.top-section::before {
+    @apply ml-auto w-[43%] absolute right-0 md:h-[100%] bg-blue-700;
+    content: '';
+    background: linear-gradient(to top right, #0081F6 0, #44A6FF 100%);
+    z-index: -1;
+}
+
+
+
+
+.book-self {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.8); /* Background color for the container */
+    color: #333; /* Text color */
+}
+
+.book-self::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-image: url("http://localhost:8001/images/book-self/img.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    margin-bottom: -35px;
+}
+
+@layer utilities {
+    .transition-bg-color {
+        transition-property: background-color;
+        transition-duration: 0.7s;
+        transition-timing-function: ease;
+    }
+}
+
+
+
+/*scrollbar section*/
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    width: 4px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+    margin: 2px 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(0, 0, 0, 0.5);
+}
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Hide the scrollbar when inactive */
+/* Use opacity to fade out the scrollbar */
+/*.scrollbar-hide {*/
+/*    !*scrollbar-width: thin;*!*/
+/*    scrollbar-color: transparent transparent; !* thumb and track color *!*/
+/*}*/
+
+/*!* Show the scrollbar when active *!*/
+/*!* Remove opacity to make scrollbar visible *!*/
+/*.scrollbar-show {*/
+/*    !*scrollbar-width: thin;*!*/
+/*    scrollbar-color: rgba(0, 0, 0, 0.3) transparent; !* thumb and track color *!*/
+/*}*/
